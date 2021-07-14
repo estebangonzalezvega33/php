@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apache-php
+spec:
+  selector:
+   matchLabels:
+    app: apache-php
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: apache-php
+    spec:
+      containers:
+        - name: apache-php
+          image: egonzalez2511/php7_apache:latest  
+          ports:
+            - containerPort: 80
+              name: apachephpport
