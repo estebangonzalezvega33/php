@@ -18,3 +18,18 @@ spec:
           ports:
             - containerPort: 80
               name: apachephpport
+ kind: Service
+apiVersion: v1
+metadata:
+  name: apache-php-service
+  labels:
+    app: apache-php
+spec:   
+  ports:
+  - name: apachephp
+    port: 80
+    nodePort : 31780 
+  #type: LoadBalancer
+  type: NodePort
+  selector:
+   app: apache-php
