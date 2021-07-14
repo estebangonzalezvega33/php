@@ -31,7 +31,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www
 
-COPY webphp/web /var/www/html
+COPY webphp/web /var/www
 #USER $user
 
 EXPOSE 80
