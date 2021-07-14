@@ -22,4 +22,3 @@ git --version'''
 
     }
   }
-© 2021 GitHub, Inc.
