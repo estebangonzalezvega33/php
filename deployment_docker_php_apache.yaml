@@ -28,7 +28,7 @@ metadata:
 spec:   
   ports:
   - name: apache-php
-    port: 80
+    port: 8080
     nodePort : 31785 
   #type: LoadBalancer
   type: NodePort
