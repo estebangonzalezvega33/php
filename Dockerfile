@@ -24,4 +24,4 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 #CMD php artisan serve 
 #EXPOSE 8181
 COPY webphp/web /var/www/html
-EXPOSE 8080
+EXPOSE 80
