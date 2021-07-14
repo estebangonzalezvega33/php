@@ -1,4 +1,4 @@
-FROM php:7.2.14-fpm
+FROM php:7.0-apache
 #RUN apt-get update && apt-get install -y libmcrypt-dev \
 #    mysql-client libmagickwand-dev --no-install-recommends \
 #    && pecl install imagick \
@@ -24,4 +24,4 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 #CMD php artisan serve 
 #EXPOSE 8181
 COPY webphp/web /var/www/html
-EXPOSE 80
+EXPOSE 8080
