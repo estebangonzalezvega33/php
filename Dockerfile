@@ -14,4 +14,4 @@ RUN cd example-app
 CMD php artisan serve 
 #EXPOSE 8181
 #COPY webphp/web /var/www/html
-EXPOSE 81080
+EXPOSE 8080

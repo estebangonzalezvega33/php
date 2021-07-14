@@ -16,7 +16,7 @@ spec:
         - name: apache-php
           image: egonzalez2511/php7_apache:latest  
           ports:
-            - containerPort: 81080
+            - containerPort: 8080
               name: apachephpport
 ---
 kind: Service
