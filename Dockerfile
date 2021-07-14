@@ -34,16 +34,7 @@ RUN apt-get update \
         unzip \
         ca-certificates \
         curl \
-        php${PHP_VERSION}-cli \
-        php${PHP_VERSION}-curl \
-        php${PHP_VERSION}-mbstring \
-        php${PHP_VERSION}-opcache \
-        php${PHP_VERSION}-readline \
-        php${PHP_VERSION}-xml \
-        php${PHP_VERSION}-zip \
-    && if [ "${PHP_VERSION}" = "7.1" ] || [ "${PHP_VERSION}" = "7.2" ] || [ "${PHP_VERSION}" = "7.3" ] || [ "${PHP_VERSION}" = "7.4" ]; then apt-get install -y --no-install-recommends php${PHP_VERSION}-json; fi \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
+   
 
 # |--------------------------------------------------------------------------
 # | User
