@@ -9,12 +9,12 @@ git --version'''
       }
     }
 
-    stage('------------ Deploy php apache docker ------------- ') {
+    stage('Deploy billing App') {
       steps {
         withCredentials(bindings: [
-                      string(credentialsId: 'kubernete-jenkis-server-account', variable: 'api_token')
+                      string(credentialsId: 'kubernetes-jenkins-server-account', variable: 'api_token')
                       ]) {
-            sh 'kubectl --token $api_token --server https://10.10.11.100:6443 --insecure-skip-tls-verify=true apply -f deployment_docker_php_apache.yaml '
+            sh '/kubectl --token $api_token --server https://10.10.11.100:6443 --insecure-skip-tls-verify=true apply -f deployment_docker_php_apache.yaml '
           }
 
         }
