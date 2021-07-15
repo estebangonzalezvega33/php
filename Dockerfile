@@ -1,23 +1,14 @@
-FROM php:7.0-apache
+FROM php:7.2-apache
 LABEL authors="esteban gonzalez"
-
-#RUN apt update \
-#        && apt install -y \
-#            g++ \
-#            libicu-dev \
-#            libpq-dev \
-#            libzip-dev \
-#            zip \
-#            zlib1g-dev \
-#        && docker-php-ext-install \
-#            intl \
-#            opcache \
-#            pdo \
-#            pdo_pgsql \
-#            pgsql \
+RUN apt update
+RUN apt install -y git 
+RUN apt install -y zip 
 WORKDIR /var/www/laravel_docker
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-#WORKDIR /etc/apache2/sites-enabled/
-#COPY default.conf /etc/apache2/sites-enabled/
-COPY webphp/web /var/www/html
+WORKDIR /etc/apache2/sites-enabled/
+RUN  rm 000-default.conf
+COPY default.conf /etc/apache2/sites-enabled/
+WORKDIR /var/www/laravel_docker
+RUN  composer create-project laravel/laravel .
+RUN chmod -R 777 /var/www/laravel_docker/storage
 EXPOSE 80
