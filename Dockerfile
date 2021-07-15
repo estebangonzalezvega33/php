@@ -2,7 +2,7 @@ FROM composer:1.6.5 as build
 LABEL authors="esteban gonzalez"
 
 WORKDIR /app
-#COPY . /app
+COPY . /app
 RUN composer install
 
 
