@@ -20,4 +20,4 @@ RUN apt update \
 #WORKDIR /etc/apache2/sites-enabled/
 #COPY default.conf /etc/apache2/sites-enabled/
 #COPY webphp/web /var/www/html
-#EXPOSE 80
+EXPOSE 80
