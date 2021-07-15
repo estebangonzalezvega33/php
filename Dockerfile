@@ -1,4 +1,4 @@
-FROM php:7.2-fpm
+FROM php:7.0-apache
 LABEL authors="esteban gonzalez"
 
 #RUN apt update \
@@ -19,5 +19,5 @@ LABEL authors="esteban gonzalez"
 #RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 #WORKDIR /etc/apache2/sites-enabled/
 #COPY default.conf /etc/apache2/sites-enabled/
-#COPY webphp/web /var/www/html
+COPY webphp/web /var/www/html
 EXPOSE 80
