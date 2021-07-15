@@ -16,7 +16,7 @@ spec:
         - name: apache-php
           image: egonzalez2511/php7_apache:latest  
           ports:
-            - containerPort: 80
+            - containerPort: 8080
               name: apachephpport
 ---
 kind: Service
@@ -28,7 +28,7 @@ metadata:
 spec:   
   ports:
   - name: apache-php
-    port: 80
+    port: 8080
     nodePort : 31785 
   #type: LoadBalancer
   type: NodePort
