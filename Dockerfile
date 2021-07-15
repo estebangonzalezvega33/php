@@ -18,6 +18,6 @@ RUN apt update \
 WORKDIR /var/www/laravel_docker
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 #WORKDIR /etc/apache2/sites-enabled/
-COPY default.conf /etc/apache2/sites-enabled/
+#COPY default.conf /etc/apache2/sites-enabled/
 #COPY webphp/web /var/www/html
 EXPOSE 80
